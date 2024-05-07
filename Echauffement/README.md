@@ -19,23 +19,21 @@ Le tri de chaîne de caractères utilise le tri par insertion. Sa complexité th
 
 # Resultats
 
-'''
 **************************************************
 Tableau initial de taille 1000
 **************************************************
-Tableau tri├® par insertion en [ 0.000000 ] secondes
-Tableau tri├® par insertion dichotomique en [ 0.000000 ] secondes
+- Tableau trié par insertion en [ 0.000000 ] secondes
+- Tableau trié par insertion dichotomique en [ 0.000000 ] secondes
 
 **************************************************
 Tableau initial de taille 10000
 **************************************************
-Tableau trie par insertion en [ 0.068000 ] secondes
-Tableau trie par insertion dichotomique en [ 0.000000 ] secondes
+- Tableau trié par insertion en [ 0.068000 ] secondes
+- Tableau trié par insertion dichotomique en [ 0.000000 ] secondes
 
 **************************************************
 Tableau initial de taille 100000
 **************************************************
-Tableau trie par insertion en [ 12.658000 ] secondes
-Tableau trie par insertion dichotomique en [ 0.021000 ] secondes
+- Tableau trié par insertion en [ 12.658000 ] secondes
+- Tableau trié par insertion dichotomique en [ 0.021000 ] secondes
 
-'''
