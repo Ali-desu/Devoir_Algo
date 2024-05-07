@@ -26,10 +26,10 @@ Comme k n'est pas encore sorti, cela signifie que k > j - 1. Étant donné que k
 
 ## Question 3.
 
-Imaginons une séquence triable a de l'intervalle ~1,n et identifions k comme la position de l'entier n dans cette séquence.
+Imaginons une séquence triable a de l'intervalle [1,n] et identifions k comme la position de l'entier n dans cette séquence.
 
 Définissons b comme la séquence des k - 1 entiers précédant n, et c comme la séquence des n - k entiers qui le suivent. Si x appartient à b et y appartient à c, alors (x,n,y) forme un motif de a, ce qui implique que x < y < n (sinon a ne serait pas triable).
 
-Par conséquent, b est une séquence triable de ~1,k - 1 et c une séquence triable de ~k,n - 1 (triables car ne comportant pas le motif (2,3,1)).
+Par conséquent, b est une séquence triable de [1,k - 1] et c une séquence triable de [k,n - 1] (triables car ne comportant pas le motif (2,3,1)).
 
 Il existe c(k - 1) possibilités pour b et c(n - k) pour c, donc le nombre de séquences triables cn est égal à ∑<sub>k=1</sub><sup>n</sup> c(k - 1) c(n - k).
