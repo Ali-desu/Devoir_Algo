@@ -1,36 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h> // Ajout de la bibliothèque pour mesurer le temps
 
 int *genererTableau(int taille) {
-    // Allouer de la mémoire pour le tableau
     int *tableau = (int *)malloc(taille * sizeof(int));
-
-    // Vérifier si l'allocation de mémoire a réussi
     if (tableau == NULL) {
         printf("Erreur: Impossible d'allouer de la mémoire.\n");
-        exit(1); // Quitter le programme avec un code d'erreur
+        exit(1);
     }
-
-    // Remplir le tableau avec des nombres aléatoires
     for (int i = 0; i < taille; i++) {
-        tableau[i] = rand() % 100; // Générer un nombre aléatoire entre 0 et 99
+        tableau[i] = rand() % 100;
     }
-
-    // Retourner le tableau généré
     return tableau;
 }
 
-void afficherTableau(int T[],int n){
+void afficherTableau(int T[], int n){
     for(int i = 0; i < n; i++){
         printf("%d ", T[i]);
     }
     printf("\n");
-
 }
 
+//fonction tri par insertion classique
 
-void triInsertion(int T[] , int n){
+void triInsertion(int T[], int n){
     int i, j, cle;
     for(i = 1; i < n; i++){
         cle = T[i];
@@ -43,7 +37,10 @@ void triInsertion(int T[] , int n){
     }
 }
 
-void triInsertionDich(int T[] , int n){
+
+//fonction tri par insertion a recherche dichotomique
+
+void triInsertionDich(int T[], int n){
     int i, j, cle, g, d, m;
     for(i = 1; i < n; i++){
         cle = T[i];
@@ -64,7 +61,8 @@ void triInsertionDich(int T[] , int n){
     }
 }
 
-// Fonction pour le tri par insertion des chaînes de caractères
+//fonction de tri par insertion des chaines de caracteres
+
 void triInsertionChaine(char T[], int n) {
     int i, j, cle, g, d, m;
     for(i = 1; i < n; i++){
@@ -86,38 +84,67 @@ void triInsertionChaine(char T[], int n) {
     }
 }
 
+// Fonction pour calculer le temps pris par une fonction de tri
+double calculerTemps(void (*fonctionTri)(int[], int), int T[], int n) {
+    clock_t debut, fin;
+    double temps;
+
+    debut = clock();
+    fonctionTri(T, n);
+    fin = clock();
+
+    temps = ((double) (fin - debut)) / CLOCKS_PER_SEC;
+    return temps;
+}
+
 int main(){
-   
-   int n;
-    printf("Donner la taille du tableau : ");
-    scanf("%d", &n);
+    int n;
     
-    /* Créer un tableau de taille n et le remplir avec des nombres aléatoires */
+    n = 1000;
     int *T = genererTableau(n);
 
-    printf("Tableau initial : ");
-    afficherTableau(T, n);
+    printf("**************************************************\n");
+    printf("Tableau initial de taille %d\n", n);
+    printf("**************************************************\n");
 
-    /* Tri par insertion */
-    printf("Tri par insertion\n");
-    triInsertion(T, n);
-    printf("Tableau trie : \n");
-    afficherTableau(T, n);
+    double tempsTriInsertion = calculerTemps(triInsertion, T, n);
+    printf("Tableau trié par insertion en [ %f ] secondes\n", tempsTriInsertion);
 
-    /* Tri par insertion dichotomique */
-    printf("\nTri par insertion dichotomique\n");
-    triInsertionDich(T, n);
-    printf("Tableau trie par insertion dichotomique : \n");
-    afficherTableau(T, n);
+    double tempsTriInsertionDich = calculerTemps(triInsertionDich, T, n);
+    printf("Tableau trié par insertion dichotomique en [ %f ] secondes\n", tempsTriInsertionDich);
+    printf("\n");
 
-    /*trier une chaine de caracteres */
-    char chaine[] = "BACDZEF";
+    n = 10000;
 
-    printf("Chaine de caracteres : %s\n", chaine);
-    printf("Tri de la chaine de caracteres\n");
-    triInsertion(chaine, 7);
-    printf("Chaine de caracteres triee : %s\n", chaine);
+    T = genererTableau(n);
 
+    printf("**************************************************\n");
+    printf("Tableau initial de taille %d\n", n);
+    printf("**************************************************\n");
+
+    tempsTriInsertion = calculerTemps(triInsertion, T, n);
+    printf("Tableau trie par insertion en [ %f ] secondes\n", tempsTriInsertion);
+
+    tempsTriInsertionDich = calculerTemps(triInsertionDich, T, n);
+    printf("Tableau trie par insertion dichotomique en [ %f ] secondes\n", tempsTriInsertionDich);
+    printf("\n");
+
+    n = 100000;
+
+    T = genererTableau(n);
+
+    printf("**************************************************\n");
+    printf("Tableau initial de taille %d\n", n);
+    printf("**************************************************\n");
+
+    tempsTriInsertion = calculerTemps(triInsertion, T, n);
+    printf("Tableau trie par insertion en [ %f ] secondes\n", tempsTriInsertion);
+
+    tempsTriInsertionDich = calculerTemps(triInsertionDich, T, n);
+    printf("Tableau trie par insertion dichotomique en [ %f ] secondes\n", tempsTriInsertionDich);
+    printf("\n");
 
     return 0;
 }
+
+
