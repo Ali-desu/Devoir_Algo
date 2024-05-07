@@ -4,6 +4,7 @@ Vous trouverez ici l'énoncé du problème à résoudre.
 
 Le problème est traité dans le dossier TRI_PILE, accompagné de son propre fichier README. Vous y trouverez également la solution sous forme de code.
 
+Bonne journée !
 
 
 # Problème de Tri avec Pile
