@@ -18,7 +18,9 @@ L'objectif de ce problème est de développer un algorithme permettant de trier 
 
 ## Méthode de résolution
 
-Pour résoudre ce problème, nous devons concevoir un algorithme qui utilise les opérations de la pile de manière efficace pour trier la séquence. Nous pourrions envisager différentes stratégies, telles que l'utilisation d'une deuxième pile pour aider au tri, ou la manipulation habile des opérations de push et pop pour obtenir le résultat souhaité.
+Pour résoudre ce problème, nous devons concevoir un algorithme qui utilise les opérations de la pile de manière efficace pour trier la séquence.
+Nous devons démontrer qu'une séquence donnée est triable par une pile en utilisant uniquement les opérations de push et pop, sans utiliser de pile supplémentaire. Nous devons également prouver que si une séquence est triable, il existe une unique façon de la trier.
+
 
 ## Instructions
 
