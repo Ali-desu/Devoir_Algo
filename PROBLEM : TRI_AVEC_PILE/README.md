@@ -26,7 +26,7 @@ Comme k n'est pas encore sorti, cela signifie que k > j - 1. Étant donné que k
 
 ## Question 3.
 
-Imaginons une séquence triable a de l'intervalle [1,n]et identifions k comme la position de l'entier n dans cette séquence.
+Imaginons une séquence triable a de l'intervalle [1,n] et identifions k comme la position de l'entier n dans cette séquence.
 
 Définissons b comme la séquence des k - 1 entiers précédant n, et c comme la séquence des n - k entiers qui le suivent. Si x appartient à b et y appartient à c, alors (x,n,y) forme un motif de a, ce qui implique que x < y < n (sinon a ne serait pas triable).
 
