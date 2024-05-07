@@ -1,10 +1,9 @@
-# Problème de Tri avec Pile
+# Bienvenue sur ce dépôt !
 
-Ce dépôt contient l'énoncé du problème à résoudre, ainsi que sa solution. 
+Vous trouverez ici l'énoncé du problème à résoudre.
 
-Le problème est traité dans le dossier TRI_PILE. Vous trouverez l'énoncé détaillé du problème dans ce dossier, ainsi que la solution implémentée en code.
+Le problème est traité dans le dossier TRI_PILE, accompagné de son propre fichier README. Vous y trouverez également la solution sous forme de code.
 
-N'hésitez pas à explorer les fichiers pour plus d'informations.
 
 
 # Problème de Tri avec Pile
