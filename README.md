@@ -17,8 +17,8 @@ Une séquence est une permutation des entiers d'un intervalle [1, n] avec n ∈ 
 Nous allons aborder les questions suivantes :
 
 ### Question 1
-a) Parmi les séquences suivantes, lesquelles peuvent être triées par une pile ? (2,4,1,3), (3,1,2,5,4), (4,5,3,7,2,1,6).
-b) Montrer que lors d'un tri réussi, les éléments de la pile sont à tout moment rangés par ordre croissant (en partant du sommet).
+a) Parmi les séquences suivantes, lesquelles peuvent être triées par une pile ? (2,4,1,3), (3,1,2,5,4), (4,5,3,7,2,1,6). <br>
+b) Montrer que lors d'un tri réussi, les éléments de la pile sont à tout moment rangés par ordre croissant (en partant du sommet). <br>
 c) Justifier que si une séquence est triable par une pile, il existe une unique manière de la trier, et en déduire une fonction `triPile(a)` qui prend en argument une séquence représentée par une liste `a` et qui retourne un booléen traduisant si la séquence est triable ou pas.
 
 ### Question 2
