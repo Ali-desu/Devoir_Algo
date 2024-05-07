@@ -21,7 +21,7 @@ Le tri de chaîne de caractères utilise le tri par insertion. Sa complexité th
 
 ![Screenshot 2024-05-07 225812](https://github.com/Ali-desu/Devoir_Algo/assets/144283720/9c1d5181-0846-402b-ab2b-609c494f7e87)
 
-- Remarque :
+### Remarque :
 
 Les résultats montrent une différence significative dans le temps d'exécution entre le tri par insertion et le tri par insertion dichotomique, en particulier pour les tableaux de grande taille. Le tri par insertion dichotomique présente une amélioration notable des performances, ce qui confirme sa complexité théorique réduite par rapport au tri par insertion classique.
 
