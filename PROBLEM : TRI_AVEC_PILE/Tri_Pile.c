@@ -1,23 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
-//structure d'une pile
-typedef struct pile{
+// Structure of a pile
+typedef struct {
     int *tableau;
     int taille;
     int sommet;
-}pile;
+} pile;
 
-/**
- * @brief Fonction qui initialise une pile
- * 
- * @param p 
- * @param taille 
- */
-void init_pile(pile* p, int taille){
+// Function to initialize a pile
+void init_pile(pile *p, int taille) {
     p->tableau = (int *)malloc(taille * sizeof(int));
-    if(p->tableau == NULL){
+    if (p->tableau == NULL) {
         printf("Erreur: Impossible d'allouer de la mémoire.\n");
         exit(1);
     }
@@ -25,112 +19,101 @@ void init_pile(pile* p, int taille){
     p->sommet = -1;
 }
 
-/**
- * @brief Fonction qui empile un élément dans une pile
- * 
- * @param p 
- * @param x 
- */
-void push(pile* p, int x){
-    if(p->sommet == p->taille - 1){
-        printf("Erreur: Impossible d'push, la pile est pleine.\n");
+// Function to push an element onto a pile
+void push(pile *p, int x) {
+    if (p->sommet == p->taille - 1) {
+        printf("Erreur: Impossible de pousser, la pile est pleine.\n");
         exit(1);
     }
     p->sommet++;
     p->tableau[p->sommet] = x;
-    p->taille++;
 }
 
-/**
- * @brief Fonction qui dépile le sommet d'une pile et le supprime 
- * 
- * @param p 
- * @return int 
- */
-int pop(pile* p){
-    if(p->sommet == -1){
+// Function to pop the top element from a pile
+int pop(pile *p) {
+    if (p->sommet == -1) {
         printf("Erreur: Impossible de dépiler, la pile est vide.\n");
         exit(1);
     }
-    p->taille--;
     return p->tableau[p->sommet--];
-
 }
 
-/**
- * @brief Fonction qui teste si une pile est vide
- * 
- * @param p 
- * @return int 
- */
-int empty(const pile* p){
+// Function to check if a pile is empty
+int empty(const pile *p) {
     return p->sommet == -1;
 }
 
-/**
- * @brief Fonction qui teste si une pile est pleine
- * 
- * @param p 
- * @return int 
- */
-int est_pleine(const pile* p){
+// Function to check if a pile is full
+int est_pleine(const pile *p) {
     return p->sommet == p->taille - 1;
 }
 
-/**
- * @brief Fonction qui affiche le contenu d'une pile
- * 
- * @param p 
- */
-void afficher_pile(const pile* p){
-    for(int i = 0; i <= p->sommet; i++){
+// Function to display the contents of a pile
+void afficher_pile(const pile *p) {
+    for (int i = 0; i <= p->sommet; i++) {
         printf("%d ", p->tableau[i]);
     }
     printf("\n");
 }
 
-/**
- * @brief Fonction qui retourne le sommet d'une pile sans le supprimer
- * 
- * @param p 
- * @return int 
- */
-
-int peek(const pile* p){
-    if(p->sommet == -1){
+// Function to return the top element of a pile without removing it
+int peek(const pile *p) {
+    if (p->sommet == -1) {
         printf("Erreur: Impossible de retourner le sommet, la pile est vide.\n");
         exit(1);
     }
     return p->tableau[p->sommet];
 }
 
+// Function to perform the pile sort
+int triPile( int a[], int n) {
+    int k = 0;
+    int s = 0;
+    pile stack;
+    init_pile(&stack, n);
 
-/**
- * @brief Fonction principale
- * 
- * @return int 
- */
+    for (int i = 0; i < 2 * n; i++) {
+        if (!empty(&stack) && peek(&stack) == s + 1) {
+            s = pop(&stack);
+        } else if (k < n) {
+            push(&stack, a[k++]);
+        } else {
+            return 0;
+        }
+    }
+    return 1;
+}
 
-int main(){
+//fonction qui permet de déterminer si une séquence est triable ou non
+void triable(int a[], int n){
+    printf("La sequence ");
+    afficherTableau(a, n);
 
-    pile p; //creation d'une pile
-    
-    init_pile(&p, 5); //initialisation de la pile avec un tableau de taille 5
+    if(triPile(a, n)){
+        printf("est triable\n");
+    }
+    else{
+        printf("n'est pas triable\n");
+    }
+}
 
-    push(&p, 4); //push 4 dans la pile
-    push(&p, 3);
-    push(&p, 2);
-    push(&p, 1);
-    push(&p, 0);
+// fonction qui affiche un tableau
+void afficherTableau(int T[],int n){
+    printf("[ ");
+    for(int i = 0; i < n; i++){
+        printf("%d ", T[i]);
+    }
+    printf("] ");
+}
 
-    afficher_pile(&p); //afficher le contenu de la pile
+int main() {
+    int a[] = {2, 4, 3, 1};
+    int taille_a = sizeof(a) / sizeof(a[0]);
+    triable(a, taille_a); // sequence non triable
 
-    printf("Sommet : %d\n", peek(&p)); //retourner le sommet de la pile (0)
-    pop(&p); //pop
-    afficher_pile(&p);
-    push(&p , 4);
-    afficher_pile(&p);
-    printf("Sommet : %d\n", peek(&p)); //retourner le sommet de la pile (1)
+    int b[] = {2, 1, 3, 4};
+    int taille_b = sizeof(b) / sizeof(b[0]);
+    triable(b, taille_b); // triable
 
     return 0;
 }
