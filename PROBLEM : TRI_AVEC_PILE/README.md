@@ -13,4 +13,4 @@ Supposons qu’à un certain stade du tri, il existe deux éléments i et j dans
 ### c) 
 Considérons le prochain élément à devoir sortir de la pile pendant le tri. S'il se trouve au sommet de la pile, il doit être retiré à l'étape suivante pour éviter d'être recouvert par un autre élément. Si l'élément ne se trouve pas au sommet de la pile, la seule opération possible est d'empiler le prochain élément de la séquence à trier, s'il en reste. Ainsi, le processus de tri est déterministe à chaque étape.
 
-- Un programme est écrit en C et se trouve dans le fichier .c dédié. Il vise à évaluer le tri de piles en utilisant différents tableaux d'entrée
+- Un programme est écrit en C et se trouve dans le fichier Tri_Pile.c dédié. Il vise à évaluer le tri de piles en utilisant différents tableaux d'entrée.
