@@ -1,9 +1,9 @@
-# I-Introduction
+# Introduction
 
 Ce programme compare la complexité théorique et pratique de deux algorithmes de tri. Il génère un tableau aléatoire, le trie , puis mesure le temps pris par chaque algorithme.
 
 
-# II-Complexité théorique et pratique
+# Complexité théorique et pratique
 
 ## Tri par insertion
 
@@ -17,4 +17,25 @@ Le tri par insertion dichotomique a une complexité théorique de O(n^2), mais i
 
 Le tri de chaîne de caractères utilise le tri par insertion. Sa complexité théorique et pratique est similaire à celle du tri par insertion.
 
+# Resultats
 
+'''
+**************************************************
+Tableau initial de taille 1000
+**************************************************
+Tableau tri├® par insertion en [ 0.000000 ] secondes
+Tableau tri├® par insertion dichotomique en [ 0.000000 ] secondes
+
+**************************************************
+Tableau initial de taille 10000
+**************************************************
+Tableau trie par insertion en [ 0.068000 ] secondes
+Tableau trie par insertion dichotomique en [ 0.000000 ] secondes
+
+**************************************************
+Tableau initial de taille 100000
+**************************************************
+Tableau trie par insertion en [ 12.658000 ] secondes
+Tableau trie par insertion dichotomique en [ 0.021000 ] secondes
+
+'''
