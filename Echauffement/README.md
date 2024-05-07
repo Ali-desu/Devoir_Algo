@@ -1,8 +1,9 @@
-# Introduction
+# I-Introduction
 
 Ce programme compare la complexité théorique et pratique de deux algorithmes de tri. Il génère un tableau aléatoire, le trie , puis mesure le temps pris par chaque algorithme.
 
-# Complexité théorique et pratique
+
+# II-Complexité théorique et pratique
 
 ## Tri par insertion
 
