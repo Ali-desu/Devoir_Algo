@@ -1,5 +1,14 @@
 # Problème de Tri avec Pile
 
+Ce dépôt contient l'énoncé du problème à résoudre, ainsi que sa solution. 
+
+Le problème est traité dans le dossier TRI_PILE. Vous trouverez l'énoncé détaillé du problème dans ce dossier, ainsi que la solution implémentée en code.
+
+N'hésitez pas à explorer les fichiers pour plus d'informations.
+
+
+# Problème de Tri avec Pile
+
 Ce problème porte sur le tri d'une séquence d'entiers à l'aide d'une pile. On dispose d'une classe `Pile` avec les méthodes suivantes :
 
 - `p.empty()`: détermine si la pile `p` est vide.
