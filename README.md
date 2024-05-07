@@ -2,7 +2,7 @@
 
 Vous trouverez ici l'énoncé du problème à résoudre.
 
-Le problème est traité dans le dossier PROBLEM : TRI_PILE, accompagné de son propre fichier README. Vous y trouverez également la solution sous forme de code.
+Le problème est traité dans le dossier PROBLEM : TRI_AVEC_PILE, accompagné de son propre fichier README. Vous y trouverez également la solution sous forme de code.
 
 Bonne journée !
 
